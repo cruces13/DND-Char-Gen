@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-class Weapon(object):
-    def __init__(self, name, cost, damage, damage_type, distance, weight, properties):
-=======
 import constants
 import random
 
@@ -38,7 +34,6 @@ class _Class():
 
 class Weapon():
     def __init__(self, name, cost, damage, damage_type, distance, weight, properties, melee = True):
->>>>>>> 1e51ab9360a705a339db2442a5ff77a93c798526
         self.name = name
         self.cost = cost
         self.damage = damage
@@ -46,27 +41,14 @@ class Weapon():
         self.distance = distance
         self.weight = weight
         self.properties = properties
-<<<<<<< HEAD
-
-class Die(object):
-    def __init__(self, die, count):
-=======
         self.melee = melee
 
 class Die():
     def __init__(self, count, die):
->>>>>>> 1e51ab9360a705a339db2442a5ff77a93c798526
         self.count = count
         self.die = die
 
 
-<<<<<<< HEAD
-
-Club = Weapon("Club", .01, Die(1,4), "Bludgeoning", None, 2, ["light"])
-Dagger = Weapon("Dagger", 2, Die(1,4), "Piercing", [20, 60], 1, ["finesse", "light", "thrown"])
-print(Club.cost)
-print(Dagger.cost)
-=======
 #Race objects
 Dwarf = Race(
     "Dwarf",
@@ -140,4 +122,3 @@ Light_Crossbow = Weapon(
 )
 #Melee Martial
 #Ranged Martial
->>>>>>> 1e51ab9360a705a339db2442a5ff77a93c798526
