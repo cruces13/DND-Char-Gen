@@ -67,6 +67,19 @@ SIMPLE = []
 MARTIAL = []
 WEAPONS = [SIMPLE, MARTIAL]
 SPELLS = []
+<<<<<<< HEAD
+=======
+LANGUAGES = [
+    "Common",
+    "Dwarvish",
+    "Elvish",
+    "Giant",
+    "Gnomish",
+    "Goblin",
+    "Halfling",
+    "Orc"
+]
+>>>>>>> 1e51ab9360a705a339db2442a5ff77a93c798526
 
 ARMOR_CLASS = 0
 INITIATIVE = 0
@@ -84,4 +97,9 @@ HIT_DICE = 0
 TRAITS = []
 VALUES = []
 FLAWS = []
+<<<<<<< HEAD
 NAMES = []
+=======
+NAMES = []
+
+>>>>>>> 1e51ab9360a705a339db2442a5ff77a93c798526
