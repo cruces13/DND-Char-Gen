@@ -48,7 +48,6 @@ class Die():
         self.count = count
         self.die = die
 
-
 #Race objects
 Dwarf = Race(
     "Dwarf",
@@ -109,6 +108,7 @@ Greatclub = Weapon(
     10,
     ["two-handed"]
     )
+
 #Ranged Simple
 Light_Crossbow = Weapon(
     "Light Crossbow",
@@ -120,5 +120,7 @@ Light_Crossbow = Weapon(
     ["ammunition", "loading", "two-handed"],
     melee = False
 )
+
 #Melee Martial
+
 #Ranged Martial
