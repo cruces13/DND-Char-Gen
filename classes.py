@@ -48,7 +48,6 @@ class Die():
         self.count = count
         self.die = die
 
-
 #Race objects
 Dwarf = Race(
     "Dwarf",
@@ -172,6 +171,7 @@ Spear = Weapon(
     3,
     ["thrown", "versatile8"]
 )
+
 #Ranged Simple
 Light_Crossbow = Weapon(
     "Light Crossbow",
@@ -213,6 +213,7 @@ Sling = Weapon(
     ["ammunition"],
     melee = False
 )
+
 #Melee Martial
 Battleaxe = Weapon(
     "Battleaxe",
@@ -376,6 +377,7 @@ Whip = Weapon(
     3,
     ["finesse", "reach"]
 )
+
 #Ranged Martial
 Blowgun = Weapon(
     "Blowgun",
