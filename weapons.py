@@ -1,12 +1,11 @@
-from classes import Weapon
-from functions import die
+from blueprints import Weapon
 
 #Melee Simple
 Club = Weapon(
     "Club",
     .01,
-    die(1, 4),
-    "Bludgeoning",
+    (1, 4),
+    "bludgeoning",
     None,
     2,
     ["light"]
@@ -14,8 +13,8 @@ Club = Weapon(
 Dagger = Weapon(
     "Dagger",
     2,
-    die(1, 4),
-    "Piercing",
+    (1, 4),
+    "piercing",
     [20, 60],
     1,
     ["finesse", "light", "thrown"]
@@ -23,8 +22,8 @@ Dagger = Weapon(
 Greatclub = Weapon(
     "Greatclub",
     .02,
-    die(1, 8),
-    "Bludgeoning",
+    (1, 8),
+    "bludgeoning",
     None,
     10,
     ["two-handed"]
@@ -32,8 +31,8 @@ Greatclub = Weapon(
 Handaxe = Weapon(
     "Handaxe",
     5,
-    die(1, 6),
-    "Slashing",
+    (1, 6),
+    "slashing",
     [20, 60],
     2,
     ["light", "thrown"]
@@ -41,8 +40,8 @@ Handaxe = Weapon(
 Javelin = Weapon(
     "Javelin",
     .05,
-    die(1, 6),
-    "Piercing",
+    (1, 6),
+    "piercing",
     [30, 120],
     2,
     ["thrown"]
@@ -50,8 +49,8 @@ Javelin = Weapon(
 Light_Hammer = Weapon(
     "Light_Hammer",
     2,
-    die(1, 4),
-    "Bludgeoning",
+    (1, 4),
+    "bludgeoning",
     [20, 60],
     2,
    ["light", "thrown"] 
@@ -59,8 +58,8 @@ Light_Hammer = Weapon(
 Mace = Weapon(
     "Mace",
     5,
-    die(1, 6),
-    "Bludgeoning",
+    (1, 6),
+    "bludgeoning",
     None,
     4,
     None
@@ -68,8 +67,8 @@ Mace = Weapon(
 Quarterstaff = Weapon(
     "Quarterstaff",
     .02,
-    die(1, 6),
-    "Bludgeoning",
+    (1, 6),
+    "bludgeoning",
     None,
     4,
     ["versatile8"]
@@ -77,8 +76,8 @@ Quarterstaff = Weapon(
 Sickle = Weapon(
     "Sickle",
     1,
-    die(1, 4),
-    "Slashing",
+    (1, 4),
+    "slashing",
     None,
     2,
     ["light"]
@@ -86,8 +85,8 @@ Sickle = Weapon(
 Spear = Weapon(
     "Spear",
     1,
-    die(1, 6),
-    "Piercing",
+    (1, 6),
+    "piercing",
     [20, 60],
     3,
     ["thrown", "versatile8"]
@@ -97,8 +96,8 @@ Spear = Weapon(
 Light_Crossbow = Weapon(
     "Light Crossbow",
     25,
-    die(1, 8),
-    "Piercing",
+    (1, 8),
+    "piercing",
     [80, 320],
     5,
     ["ammunition", "loading", "two-handed"],
@@ -107,8 +106,8 @@ Light_Crossbow = Weapon(
 Dart = Weapon(
     "Dart",
     .005,
-    die(1, 4),
-    "Piercing",
+    (1, 4),
+    "piercing",
     [20, 60],
     .25,
     ["finesse", "thrown"],
@@ -117,8 +116,8 @@ Dart = Weapon(
 Shortbow = Weapon(
     "Shortbow",
     25,
-    die(1, 6),
-    "Piercing",
+    (1, 6),
+    "piercing",
     [80, 320],
     2,
     ["ammunition", "two-handed"],
@@ -127,8 +126,8 @@ Shortbow = Weapon(
 Sling = Weapon(
     "Sling",
     .01,
-    die(1, 4),
-    "Bludgeoning",
+    (1, 4),
+    "bludgeoning",
     [30, 120],
     None,
     ["ammunition"],
@@ -139,8 +138,8 @@ Sling = Weapon(
 Battleaxe = Weapon(
     "Battleaxe",
     10,
-    die(1, 8),
-    "Slashing",
+    (1, 8),
+    "slashing",
     None,
     4,
     ["versatile10"]
@@ -148,8 +147,8 @@ Battleaxe = Weapon(
 Flail = Weapon(
     "Flail",
     10,
-    die(1, 8),
-    "Bludgeoning",
+    (1, 8),
+    "bludgeoning",
     None,
     2,
     None
@@ -157,8 +156,8 @@ Flail = Weapon(
 Glaive = Weapon(
     "Glaive",
     20,
-    die(1, 10),
-    "Slashing",
+    (1, 10),
+    "slashing",
     None,
     6,
     ["heavy", "reach", "two-handed"]
@@ -166,8 +165,8 @@ Glaive = Weapon(
 Greataxe = Weapon(
     "Greataxe",
     30,
-    die(1, 12),
-    "Slashing",
+    (1, 12),
+    "slashing",
     None,
     7,
     ["heavy", "two-handed"]
@@ -175,8 +174,8 @@ Greataxe = Weapon(
 Greatsword = Weapon(
     "Greatsword",
     50,
-    die(2, 6),
-    "Slashing",
+    (2, 6),
+    "slashing",
     None,
     6,
     ["heavy", "two-handed"]
@@ -184,8 +183,8 @@ Greatsword = Weapon(
 Halberd = Weapon(
     "Halberd",
     20,
-    die(1, 10),
-    "Slashing",
+    (1, 10),
+    "slashing",
     None,
     6,
     ["heavy", "reach", "two-handed"]
@@ -193,8 +192,8 @@ Halberd = Weapon(
 # Lance = Weapon(
 #     "Lance",
 #     10,
-#     die(1, 12),
-#     "Piercing",
+#     (1, 12),
+#     "piercing",
 #     None,
 #     6,
 #     ["reach","special^1"]
@@ -202,8 +201,8 @@ Halberd = Weapon(
 Longsword = Weapon(
     "Longsword",
     15,
-    die(1, 8),
-    "Slashing",
+    (1, 8),
+    "slashing",
     None,
     3,
     ["versatile10"]
@@ -211,8 +210,8 @@ Longsword = Weapon(
 Maul = Weapon(
     "Maul",
     10,
-    die(2, 6),
-    "Bludgeoning",
+    (2, 6),
+    "bludgeoning",
     None,
     10,
     ["heavy", "two-handed"]
@@ -220,8 +219,8 @@ Maul = Weapon(
 Morningstar = Weapon(
     "Morningstar",
     15,
-    die(1, 8),
-    "Piercing",
+    (1, 8),
+    "piercing",
     None,
     4,
     None
@@ -229,8 +228,8 @@ Morningstar = Weapon(
 Pike = Weapon(
     "Pike",
     5,
-    die(1, 10),
-    "Piercing",
+    (1, 10),
+    "piercing",
     None,
     18,
     ["heavy", "reach", "two-handed"]
@@ -238,8 +237,8 @@ Pike = Weapon(
 Rapier = Weapon(
     "Rapier",
     25,
-    die(1, 8),
-    "Piercing",
+    (1, 8),
+    "piercing",
     None,
     2,
     ["finesse"]
@@ -247,8 +246,8 @@ Rapier = Weapon(
 Scimitar = Weapon(
     "Scimitar",
     25,
-    die(1, 6),
-    "Slashing",
+    (1, 6),
+    "slashing",
     None,
     3,
     ["finesse", "light"]
@@ -256,8 +255,8 @@ Scimitar = Weapon(
 Shortsword = Weapon(
     "Shortsword",
     10,
-    die(1, 6),
-    "Piercing",
+    (1, 6),
+    "piercing",
     None,
     2,
     ["finesse", "light"]
@@ -265,8 +264,8 @@ Shortsword = Weapon(
 Trident = Weapon(
     "Trident",
     5,
-    die(1, 6),
-    "Piercing",
+    (1, 6),
+    "piercing",
     [20, 60],
     4,
     ["thrown", "versatile8"]
@@ -274,8 +273,8 @@ Trident = Weapon(
 War_Pick = Weapon(
     "War Pick",
     5,
-    die(1, 8),
-    "Piercing",
+    (1, 8),
+    "piercing",
     None,
     2,
     None
@@ -283,8 +282,8 @@ War_Pick = Weapon(
 Warhammer = Weapon(
     "Warhammer",
     15,
-    die(1, 8),
-    "Bludgeoning",
+    (1, 8),
+    "bludgeoning",
     None,
     2,
     ["versatile10"]
@@ -292,8 +291,8 @@ Warhammer = Weapon(
 Whip = Weapon(
     "Weapon",
     2,
-    die(1, 4),
-    "Slashing",
+    (1, 4),
+    "slashing",
     None,
     3,
     ["finesse", "reach"]
@@ -304,7 +303,7 @@ Blowgun = Weapon(
     "Blowgun",
     10,
     1,
-    "Piercing",
+    "piercing",
     [25, 100],
     1,
     ["ammunition", "loading"],
@@ -313,8 +312,8 @@ Blowgun = Weapon(
 Crossbow_hand = Weapon(
     "Crossbow, hand",
     75,
-    die(1, 6),
-    "Piercing",
+    (1, 6),
+    "piercing",
     [30, 120],
     3,
     ["ammuntion", "light", "loading"],
@@ -323,8 +322,8 @@ Crossbow_hand = Weapon(
 Crossbow_heavy = Weapon(
     "Crossbow, heavy",
     50,
-    die(1, 10),
-    "Piercing",
+    (1, 10),
+    "piercing",
     [100, 400],
     18,
     ["ammunition", "heavy", "loading", "two-handed"],
@@ -333,8 +332,8 @@ Crossbow_heavy = Weapon(
 Longbow = Weapon(
     "Longbow",
     50,
-    die(1, 8),
-    "Piercing",
+    (1, 8),
+    "piercing",
     [150, 600],
     2,
     ["ammunition", "heavy", "two-handed"],

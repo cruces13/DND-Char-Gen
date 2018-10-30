@@ -1,82 +1,13 @@
-import constants
-import random
+from blueprints import Class
+from random import choice
 
-class Character():
-    def __init__(self, race, _class, background, abilities, skills, alignment, size):
-        self.race = race
-        self._class = _class
-        self.background = background
-        self.abilities = abilities
-        self.skills = skills
-        self.alignment = alignment
-        self.size = size
-
-class Race():
-    def __init__(self, name, abilities, alignment, size, speed, languages):
-        self.name = name
-        self.alignment = alignment
-        self.abilities = {}
-        self.size = size
-        self.speed = speed
-        self.languages = languages
-        for i in abilities:
-            self.abilities[i] = abilities[i]
-
-class _Class():
-    def __init__(self, hit_dice, hp_start, armor, weapons, saves, skills, equipment):
-        self.hit_dice = hit_dice
-        self.hp_start = hp_start
-        self.armor = armor
-        self.weapons = weapons
-        self.saves = saves
-        self.skills = skills
-        self.equipment = equipment
-
-class Weapon():
-    def __init__(self, name, cost, damage, damage_type, distance, weight, properties, melee = True):
-        self.name = name
-        self.cost = cost
-        self.damage = damage
-        self.damage_type = damage_type
-        self.distance = distance
-        self.weight = weight
-        self.properties = properties
-        self.melee = melee
-
-class Die():
-    def __init__(self, count, die):
-        self.count = count
-        self.die = die
-
-#Race objects
-Dwarf = Race(
-    "Dwarf",
-    {
-    "Strength":     0,
-    "Dexterity":    0,
-    "Constitution": 2,
-    "Charisma":     0,
-    "Intelligence": 0,
-    "Wisdom":       0
-    },
-    [],
-    "Medium",
-    25,
-    ["Common", "Dwarvish"]
+Barbarian = Class(
+    12,
+    12,
+    ["light armor", "medium armor", "shields"],
+    ["simple", "martial"],
+    None,
+    ["strength", "constitution"],
+    ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"],
+    None, None, None, None   #This line is the pausing point, script runs
 )
-Human = Race(
-    "Human",
-    {
-    "Strength":     1,
-    "Dexterity":    1,
-    "Constitution": 1,
-    "Charisma":     1,
-    "Intelligence": 1,
-    "Wisdom":       1
-    },
-    [],
-    "Medium",
-    30,
-    ["Common", random.choice(constants.LANGUAGES)]
-)
-

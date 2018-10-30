@@ -9,7 +9,7 @@ RACES = [
     "Halfling",
     "Human",
     "Tiefling"
-    ]
+]
 CLASSES = [
     "Barbarian",
     "Bard",
@@ -23,50 +23,89 @@ CLASSES = [
     "Sorceror",
     "Warlock",
     "Wizard"
-    ]
-BACKGROUND = []
-ALIGNMENT = [
-    "Chaotic",
-    "Lawful",
-    "Neutral",
-    "Evil",
-    "Good"
-    ]
-ABILITIES = [
-    "Strength",
-    "Dexterity",
-    "Constitution",
-    "Charisma",
-    "Intelligence",
-    "Wisdom"
-    ]
-SKILLS = [
-    "Acrobatics",
-    "Animal Handling",
-    "Arcana",
-    "Athletics",
-    "Deception",
-    "History",
-    "Insight",
-    "Intimidator",
-    "Investigation",
-    "Medicine",
-    "Nature",
-    "Perception",
-    "Performance",
-    "Persuasion",
-    "Religion",
-    "Sleight of Hand",
-    "Stealth",
-    "Survival"
-    ]
-ARMOR = [
-
 ]
+BACKGROUND = [
+    "Acolyte",
+    "Charlatan",
+    "Criminal",
+    "Entertainer",
+    "Folk Hero",
+    "Gladiator",
+    "Guild Artisan",
+    "Guild Merchant",
+    "Hermit",
+    "Knight",
+    "Noble",
+    "Outlander",
+    "Pirate",
+    "Sage",
+    "Sailor",
+    "Soldier",
+    "Spy",
+    "Urchin"
+]
+ALIGNMENT = [
+    "Chaotic Good",
+    "Chaotic Neutral",
+    "Chaotic Evil",
+    "Neutral Good",
+    "True Neutral",
+    "Neutral Evil",
+    "Lawful Good",
+    "Lawful Neutral",
+    "Lawful Evil"
+]
+ABILITIES = {
+    "Strength" :     0,
+    "Dexterity" :    0,
+    "Constitution" : 0,
+    "Charisma" :     0,
+    "Intelligence" : 0,
+    "Wisdom" :       0
+}
+SKILLS = {
+    "Acrobatics" :      0,
+    "Animal Handling" : 0,
+    "Arcana" :          0,
+    "Athletics" :       0,
+    "Deception" :       0,
+    "History" :         0,
+    "Insight" :         0,
+    "Intimidator" :     0,
+    "Investigation" :   0,
+    "Medicine" :        0,
+    "Nature" :          0,
+    "Perception" :      0,
+    "Performance" :     0,
+    "Persuasion" :      0,
+    "Religion" :        0,
+    "Sleight of Hand" : 0,
+    "Stealth" :         0,
+    "Survival" :        0
+}
+LIGHT_ARMOR = [
+    "Padded",
+    "Leather",
+    "Studded Leather"
+]
+MEDIUM_ARMOR = [
+    "Hide",
+    "Chain Shirt",
+    "Scale Mail",
+    "Breastplate",
+    "Half Plate"
+]
+HEAVY_ARMOR = [
+    "Ring Mail",
+    "Chain Mail",
+    "Splint Mail",
+    "Plate Mail"
+]
+SHIELDS = ["Shield"]
 SIMPLE = []
 MARTIAL = []
-WEAPONS = [SIMPLE, MARTIAL]
-SPELLS = []
+CANTRIPS = []
+LVL1 = []
 LANGUAGES = [
     "Common",
     "Dwarvish",
@@ -78,21 +117,9 @@ LANGUAGES = [
     "Orc"
 ]
 
-ARMOR_CLASS = 0
-INITIATIVE = 0
-SPEED = 0
-CURRENT_HP = 0
-PASSIVE_WISDOM = 0
-HIT_DICE = 0
-
-
-
-
-
-
 #Story and character development
 TRAITS = []
-VALUES = []
+IDEALS = []
+BONDS = []
 FLAWS = []
 NAMES = []
-
