@@ -9,5 +9,12 @@ Barbarian = Class(
     None,
     ["strength", "constitution"],
     ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"],
-    None, None, None, None   #This line is the pausing point, script runs
+    [
+        ["Greataxe", "Any Martial"],
+        ["2 Handaxes", "Any Simple"],
+        ["Explorer's Pack", "4 Javelins"]
+    ],
+    ["Rage", "Unarmored Defense"],
+    None,
+    None
 )
