@@ -310,7 +310,7 @@ Blowgun = Weapon(
     melee = False 
 )
 Crossbow_hand = Weapon(
-    "Crossbow, hand",
+    "Hand Crossbow",
     75,
     (1, 6),
     "piercing",
@@ -320,7 +320,7 @@ Crossbow_hand = Weapon(
     melee = False
 )
 Crossbow_heavy = Weapon(
-    "Crossbow, heavy",
+    "Heavy Crossbow",
     50,
     (1, 10),
     "piercing",
