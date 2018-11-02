@@ -349,3 +349,10 @@ Longbow = Weapon(
 #     ["thrown", "special^2"],
 #     melee = False
 # )
+
+SIMPLE = [
+
+]
+MARTIAL = [
+    
+]

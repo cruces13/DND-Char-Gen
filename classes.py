@@ -22,7 +22,7 @@ Barbarian = Class(
 Bard = Class(
     "Bard",
     12,
-    ["light armor"],
+    ["Light Armor"],
     ["Simple", "Hand Crossbow", "Longsword", "Rapier", "Shortsword"],
     "Three musical instruments",
     ["Dexterity", "Charisma"],

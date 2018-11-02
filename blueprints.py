@@ -94,3 +94,13 @@ class Weapon():
         self.weight = weight
         self.properties = properties
         self.melee = melee
+
+class Armor():
+    def __init__(self, name, AC, strength, stealth, weight, cost):
+        self.name = name
+        self.AC = AC
+        self.strength = strength
+        self.stealth = stealth
+        self.weight = weight
+        self.cost = cost
+        

@@ -30,29 +30,6 @@ ALIGNMENT = [
     "Lawful Neutral",
     "Lawful Evil"
 ]
-LIGHT_ARMOR = [
-    "Padded",
-    "Leather",
-    "Studded Leather"
-]
-MEDIUM_ARMOR = [
-    "Hide",
-    "Chain Shirt",
-    "Scale Mail",
-    "Breastplate",
-    "Half Plate"
-]
-HEAVY_ARMOR = [
-    "Ring Mail",
-    "Chain Mail",
-    "Splint Mail",
-    "Plate Mail"
-]
-SHIELDS = ["Shield"]
-SIMPLE = []
-MARTIAL = []
-CANTRIPS = []
-LVL1 = []
 LANGUAGES = [
     "Common",
     "Dwarvish",
