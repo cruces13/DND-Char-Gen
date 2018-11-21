@@ -1,4 +1,13 @@
-from blueprints import Race
+        
+class Race():
+    def __init__(self, name, abilities, alignment, size, speed, languages):
+        self.name = name                       #String
+        self.abilities = abilities             #Dictionary, ability scores
+        self.alignment = alignment             #Array of strings, any particular
+        self.size = size
+        self.speed = speed
+        self.languages = languages
+
 
 #Race objects
 Dragonborn = Race(

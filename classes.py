@@ -1,18 +1,34 @@
-from blueprints import Class
-import functions
+import armor
+
+
+class Class():
+    def __init__(self, name, hit_dice, armor_prof, weapon_prof, tools, saving_throws, skills, equipment, features, cantrips, spells_known, spell_slots):
+        self.name = name                       #String
+        self.hit_dice = hit_dice               #Int
+        self.armor_prof = armor_prof           #Array of strings
+        self.weapon_prof = weapon_prof         #Array of strings
+        self.tools = tools                     #Array of strings, because of Bard
+        self.saving_throws = saving_throws     #Array of strings
+        self.skills = skills                   #2D Array, first value is how many choices
+        self.equipment = equipment             #Array of strings
+        self.features = features               #Array of strings
+        self.cantrips = cantrips               #Int
+        self.spells_known = spells_known       #Int, or string if needs to be calced
+        self.spell_slots = spell_slots         #Int, spell slots at level 1
+
 
 Barbarian = Class(
     "Barbarian",
     12,
-    ["Light Armor", "Medium Armor", "Shields"],
+    ["Light Armor", "Medium Armor", "Shields"], 
     ["Simple", "Martial"],
     None,
     ["Strength", "Constitution"],
-    ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"],
+    [2, ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"]],
     [
         ["Greataxe", "Any Martial"],
         ["2 Handaxes", "Any Simple"],
-        ["Explorer's Pack", "4 Javelins"]
+        [["Explorer's Pack", "4 Javelins"]]
     ],
     ["Rage", "Unarmored Defense"],
     None,
@@ -26,12 +42,15 @@ Bard = Class(
     ["Simple", "Hand Crossbow", "Longsword", "Rapier", "Shortsword"],
     "Three musical instruments",
     ["Dexterity", "Charisma"],
-    ["Any three"],
+    [2, ["Athletics", "Acrobatics", "Sleight of Hand", "Stealth", "Arcana",
+        "History", "Investigation", "Nature", "Religion", "Animal Handling",
+        "Insight", "Medicine", "Perception", "Survival", "Deception",
+        "Intimidation", "Performance", "Persuasion"]],
     [
         ["Rapier", "Longsword", "Any Simple"],
         ["Diplomat's Pack", "Entertainer's Pack"],
         ["Lute", "Any instrument"],
-        ["Leather Armor"],
+        ["Leather"],
         ["Dagger"]
     ],
     ["Spellcasting", "Bardic Inspiration(d6)"],
@@ -46,10 +65,10 @@ Cleric = Class(
     ["Simple"],
     None,
     ["Wisdom", "Charisma"],
-    ["History", "Insight", "Medicine", "Persuasion", "Religion"],
+    [2, ["History", "Insight", "Medicine", "Persuasion", "Religion"]],
     [
         ["Mace"],
-        ["Scale Mail", "Leather Armor"],
+        ["Scale Mail", "Leather"],
         ["Light Crossbow and 20 Bolts", "Any Simple"],
         ["Priest's Pack", "Explorer's Pack"],
         ["Shield"],
@@ -67,11 +86,11 @@ Druid = Class(
     ["Club", "Dagger", "Dart", "Javelin", "Mace", "Quarterstaff", "Scimitar", "Sling", "Spear"],
     "Herbalism Kit",
     ["Intelligence", "Wisdom"],
-    ["Arcana", "Animal Handling", "Insight", "Medicine", "Nature", "Perception", "Religion", "Survival"],
+    [2, ["Arcana", "Animal Handling", "Insight", "Medicine", "Nature", "Perception", "Religion", "Survival"]],
     [
         ["Shield", "Any Simple"],
         ["Scimitar", "Any Simple Melee"],
-        ["Leather Armor"],
+        ["Leather"],
         ["Explorer's Pack"],
         ["Druidic Focus"]
     ],
@@ -87,9 +106,10 @@ Fighter = Class(
     ["Simple", "Martial"],
     None,
     ["Strength", "Constitution"],
-    ["Acrobatics", "Animal Handling", "Athletics", "History", "Insight", "Intimidation", "Perception", "Survival"],
+    [2, ["Acrobatics", "Animal Handling", "Athletics", "History", "Insight",
+        "Intimidation", "Perception", "Survival"]],
     [
-        ["Chain Mail", ["Leather Armor", "Longbow", "20 Arrows"]],
+        ["Chain Mail", ["Leather", "Longbow", "20 Arrows"]],
         [["Any Martial", "Shield"], "Any 2 Martial"],
         [["Light Crossbow", "20 Bolts"], "2 Handaxes"],
         ["Dungeoneer's Pack", "Explorer's Pack"]
@@ -106,7 +126,7 @@ Monk = Class(
     ["Simple", "Shortsword"],
     ["One Artisan's Tools", "One instrument"],
     ["Strength", "Dexterity"],
-    ["Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth"],
+    [2, ["Acrobatics", "Athletics", "History", "Insight", "Religion", "Stealth"]],
     [
         ["Shortsword", "Any Simple"],
         ["Dungeoneer's Pack", "Explorer's Pack"],
@@ -124,7 +144,7 @@ Paladin = Class(
     ["Simple", "Martial"],
     None,
     ["Wisdom", "Charisma"],
-    ["Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion"],
+    [2, ["Athletics", "Insight", "Intimidation", "Medicine", "Persuasion", "Religion"]],
     [
         [["Any Martial", "Shield"], "Any 2 Martial"],
         ["5 Javelins", "Any Simple Melee"],
@@ -143,9 +163,9 @@ Ranger = Class(
     ["Simple", "Martial"],
     None,
     ["Strength", "Dexterity"],
-    ["Animal Handling", "Athletics", "Insight", "Investigation", "Nature", "Perception", "Stealth", "Survival"], #Choose Three
+    [3, ["Animal Handling", "Athletics", "Insight", "Investigation", "Nature", "Perception", "Stealth", "Survival"]],
     [
-        ["Scale Mail", "Leather Armor"],
+        ["Scale Mail", "Leather"],
         ["2 Shortswords", "Any 2 Simple Melee"],
         ["Dungeoneer's Pack", "Explorer's Pack"],
         [["Longbow", "20 Arrows"]]
@@ -162,12 +182,12 @@ Rogue = Class(
     ["Simple", "Hand Crossbow", "Longswords", "Rapier", "Shortsword"],
     "Thieve's Tools",
     ["Dexterity", "Intelligence"],
-    ["Acrobatics", "Athletics", "Deception", "Insight", "Intimidation", "Investigation", "Perception", "Performance", "Persuasion", "Sleight of Hand", "Stealth"], #Choose four
+    [4, ["Acrobatics", "Athletics", "Deception", "Insight", "Intimidation", "Investigation", "Perception", "Performance", "Persuasion", "Sleight of Hand", "Stealth"]],
     [
         ["Rapier", "Shortsword"],
         [["Shortbow", "20 Arrows"], "Shortsword"],
         ["Burglar's Pack", "Dungeoneer's Pack", "Explorer's Pack"],
-        [["Leather Armor", "2 Daggers", "Thieve's Tools"]]
+        [["Leather", "2 Daggers", "Thieve's Tools"]]
     ],
     ["Expertise", "Sneak Attack(1d6)", "Thieves' Cant"],
     None,
@@ -181,7 +201,7 @@ Sorceror = Class(
     ["Dagger", "Dart", "Sling", "Quarterstaff", "Light Crossbow"],
     None,
     ["Constitution", "Charisma"],
-    ["Arcana", "Deception", "Insight", "Intimidation", "Persuasion", "Religion"],
+    [2, ["Arcana", "Deception", "Insight", "Intimidation", "Persuasion", "Religion"]],
     [
         [["Light Crossbow", "20 Bolts"], "Any Simple"],
         ["Component Pouch", "Arcane Focus"],
@@ -200,12 +220,12 @@ Warlock = Class(
     ["Simple"],
     None,
     ["Wisdom", "Charisma"],
-    ["Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion"],
+    [2, ["Arcana", "Deception", "History", "Intimidation", "Investigation", "Nature", "Religion"]],
     [
         [["Light Crossbow", "20 Bolts"], "Any Simple"],
         ["Component Pouch", "Arcane Focus"],
         ["Scholar's Pack", "Dungeoneer's Pack"],
-        [["Leather Armor", "Any Simple", "2 Daggers"]]
+        [["Leather", "Any Simple", "2 Daggers"]]
     ],
     ["Otherworldly Patron", "Pact Magic"],
     2,
@@ -219,7 +239,7 @@ Wizard = Class(
     ["Dagger", "Dart", "Sling", "Quarterstaff", "Light Crossbow"],
     None,
     ["Intelligence", "Wisdom"],
-    ["Arcana", "History", "Insight", "Investigation", "Medicine", "Religion"],
+    [2, ["Arcana", "History", "Insight", "Investigation", "Medicine", "Religion"]],
     [
         ["Quarterstaff", "Dagger"],
         ["Component Pouch", "Arcane Focus"],

@@ -1,7 +1,14 @@
-from blueprints import Armor
+
+class Armor():
+    def __init__(self, name, AC, strength, stealth, weight, cost):
+        self.name = name
+        self.AC = AC
+        self.strength = strength
+        self.stealth = stealth
+        self.weight = weight
+        self.cost = cost
 
 #Light and medium armor adds dex modifier, medium armor mod max at 2
-
 #Light Armor
 Padded = Armor(
     "Padded",
@@ -114,4 +121,4 @@ LIGHT_ARMOR = [Padded, Leather, Studded_Leather]
 MEDIUM_ARMOR = [Hide, Chain_Shirt, Scale_Mail, Breastplate, Half_Plate]
 HEAVY_ARMOR = [Ring_Mail, Chain_Mail, Splint_Mail, Plate_Mail]
 SHIELD = [Shield]
-ARMOR = [LIGHT_ARMOR, MEDIUM_ARMOR, HEAVY_ARMOR, SHIELD]
+ARMOR = [j for i in [LIGHT_ARMOR, MEDIUM_ARMOR, HEAVY_ARMOR] for j in i]

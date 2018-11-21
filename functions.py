@@ -1,17 +1,11 @@
 from random import randint, choice
-import constants
+
 
 def die(count, size):
-    #Returns and int if count == 1, returns array otherwise
-    if count == 1:
-        return randint(1, size)
-    else:
-        dice = []
-        for _ in range(count):
-            dice.append(randint(1, size))
-        return dice
-
-
+    dice = []
+    for _ in range(count):
+        dice.append(randint(1, size))
+    return dice
 
 def mod_skills():
     skills = {

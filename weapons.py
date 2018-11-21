@@ -1,4 +1,14 @@
-from blueprints import Weapon
+
+class Weapon():
+    def __init__(self, name, cost, damage, damage_type, distance, weight, properties, melee = True):
+        self.name = name
+        self.cost = cost
+        self.damage = damage
+        self.damage_type = damage_type
+        self.distance = distance
+        self.weight = weight
+        self.properties = properties
+        self.melee = melee
 
 #Melee Simple
 Club = Weapon(
