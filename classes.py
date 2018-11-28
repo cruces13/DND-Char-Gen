@@ -15,7 +15,7 @@ class Class():
         self.cantrips = cantrips               #Int
         self.spells_known = spells_known       #Int, or string if needs to be calced
         self.spell_slots = spell_slots         #Int, spell slots at level 1
-
+        self.prof_bonus = 2                    #Int, hard coded for level 1
 
 Barbarian = Class(
     "Barbarian",

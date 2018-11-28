@@ -319,7 +319,7 @@ Blowgun = Weapon(
     ["ammunition", "loading"],
     melee = False 
 )
-Crossbow_hand = Weapon(
+Crossbow_Hand = Weapon(
     "Hand Crossbow",
     75,
     (1, 6),
@@ -329,7 +329,7 @@ Crossbow_hand = Weapon(
     ["ammuntion", "light", "loading"],
     melee = False
 )
-Crossbow_heavy = Weapon(
+Crossbow_Heavy = Weapon(
     "Heavy Crossbow",
     50,
     (1, 10),
@@ -360,9 +360,51 @@ Longbow = Weapon(
 #     melee = False
 # )
 
-SIMPLE = [
-
+SIMPLE_MELEE = [
+    Club,
+    Dagger,
+    Greatclub,
+    Handaxe,
+    Javelin,
+    Light_Hammer,
+    Mace,
+    Quarterstaff,
+    Sickle,
+    Spear
 ]
-MARTIAL = [
-    
+SIMPLE_RANGED = [
+    Light_Crossbow,
+    Dart,
+    Shortbow,
+    Sling
 ]
+MARTIAL_MELEE = [
+    Battleaxe,
+    Flail,
+    Glaive,
+    Greataxe,
+    Greatsword,
+    Halberd,
+    #Lance,
+    Longsword,
+    Maul,
+    Morningstar,
+    Pike,
+    Rapier,
+    Scimitar,
+    Shortsword,
+    Trident,
+    War_Pick,
+    Warhammer,
+    Whip
+]
+MARTIAL_RANGED = [
+    Blowgun,
+    Crossbow_Hand,
+    Crossbow_Heavy,
+    Longbow
+    #Net
+]
+SIMPLE = [j for i in [SIMPLE_MELEE, SIMPLE_RANGED] for j in i]
+MARTIAL = [j for i in [MARTIAL_MELEE, MARTIAL_RANGED] for j in i]
+RANGED = [j for i in [SIMPLE_RANGED, MARTIAL_RANGED] for j in i]
