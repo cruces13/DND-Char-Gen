@@ -246,4 +246,4 @@ print("Languages: ", char.languages)
 print("Equipment: ", char.equipment)
 print("Armor Class: ", char.AC)
 print("Skill Proficiencies: ", char.skill_proficiencies)
-
+input()
