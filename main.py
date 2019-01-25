@@ -27,7 +27,7 @@ LANGUAGES = [
     "Halfling",
     "Orc"
 ]
-SKILL_TAG = {
+SKILL_TAG = { #This dict matches each skill to its ability
         "Acrobatics" :      "Dexterity",
         "Animal Handling" : "Wisdom",
         "Arcana" :          "Intelligence",
@@ -67,7 +67,7 @@ class Character():
         self.saving_throws = self._class.saving_throws
 
     def determine_ability_scores(self, method):
-        ## Does NOT YET account for class bias
+        #Sets ability scores by either 4d6 drop lowest method or by the standard array in random order
         self.abilities = {
         "Strength" :     0,
         "Dexterity" :    0,
@@ -93,7 +93,6 @@ class Character():
             self.abilities[i] += self.race.abilities[i]
 
     def ability_scores_modifiers(self):
-        #Functional but ugly
         self.str_mod = (self.abilities["Strength"] - 10) // 2
         self.dex_mod = (self.abilities["Dexterity"] - 10) // 2
         self.con_mod = (self.abilities["Constitution"] - 10) // 2
@@ -110,7 +109,7 @@ class Character():
         }
 
     def set_skill_proficiencies(self):
-        #Functional
+        #Randomly generates proficiencies from provided class
         self.skill_proficiencies = []
         for _ in range(self._class.skills[0]):
             temp = choice(self._class.skills[1])
@@ -119,7 +118,7 @@ class Character():
             self.skill_proficiencies.append(temp)
 
     def skill_modifiers(self):
-        #Functional
+        #Calculates skill modifiers using ability modifiers and proficiency bonuses
         self.skills = {
         "Acrobatics" :      0,
         "Animal Handling" : 0,
@@ -146,7 +145,7 @@ class Character():
                 self.skills[i] += self._class.prof_bonus
 
     def set_alignment(self):
-        #Functional, accounts for race bias
+        #Accounts for race bias with a 1:6 ratio for odd alignment
         if self.race.alignment:
             if functions.die(1,6) == 1:
                 self.alignment = choice(ALIGNMENT)
@@ -155,12 +154,11 @@ class Character():
             self.alignment = choice(ALIGNMENT)
     
     def set_extras(self):
-        ##WIP
         self.hp_start = self._class.hit_dice + self.abilities["Constitution"]
         self.initiative = self.abilities["Dexterity"]
     
     def set_languages(self):
-        #Functional, accounts for race bias
+        #Accounts for race bias
         langs = LANGUAGES
         if self.race.name == "Human":
             langs.remove("Common")
@@ -173,7 +171,7 @@ class Character():
             self.languages.append(choice(langs))
 
     def check_equip(self, style):
-        #Functional but ugly
+        #Checks for multiple ranged weapons or multiple armors
         if style == "Ranged":
             ranged_count = 0
             for item in self.equipment:
@@ -187,10 +185,16 @@ class Character():
                     armor_count += 1
             return armor_count
 
-    def get_equipment(self):
-        ##Does NOT YET account for wildcards, ugly
+    def set_equipment(self):
+        ##Does NOT account for "Any ____ Weapon"
         for i in self._class.equipment:
-            decision = choice(i)
+            while True: #Loop handles duplicates
+                decision = choice(i)
+                if type(decision) is list:
+                    if decision[0] not in self.equipment:
+                        break
+                if decision not in self.equipment:
+                    break
             if type(decision) is list:
                 for i in decision:
                     self.equipment.append(i)
@@ -202,13 +206,9 @@ class Character():
             for j in armor.ARMOR:
                 if i == j.name:
                     self.armor = j
-        #"Smart" Select
         if self.check_equip("Ranged") > 1 or self.check_equip("Armor") > 1:
-            self.get_equipment()
-        #Check for duplicates
-        for item in self.equipment:
-            if self.equipment.count(item) > 1:
-                self.get_equipment()
+            self.equipment = []
+            self.set_equipment()
 
     def calc_armor_class(self):
         #Functional but can probably be simplified
@@ -235,16 +235,15 @@ char.set_alignment()
 char.set_extras()
 char.set_languages()
 char.ability_scores_modifiers()
-char.get_equipment()
+char.set_equipment()
 char.calc_armor_class()
 char.set_skill_proficiencies()
+char.skill_modifiers()
 print(char.race.name, char._class.name)
 print(char.alignment)
-print(char.abilities)
-print(char.languages)
-print("Character's equipment ", char.equipment)
-print(char.str_mod, char.dex_mod)
-print("The Armor class is ", char.AC)
-print(char.skill_proficiencies)
-char.skill_modifiers()
+print("Abilities: ", char.abilities)
+print("Languages: ", char.languages)
+print("Equipment: ", char.equipment)
+print("Armor Class: ", char.AC)
+print("Skill Proficiencies: ", char.skill_proficiencies)
 
