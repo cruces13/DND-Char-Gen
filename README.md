@@ -1,6 +1,6 @@
 ﻿# 5e D&D Random Character Generator
 
-This is a random character generator for D&D 5e written in python.
+This is a random character generator for D&D 5e written in python. There has been some logic implemented in order to create characters according to trends noted in races/classes.
 
 
 ## Usage
